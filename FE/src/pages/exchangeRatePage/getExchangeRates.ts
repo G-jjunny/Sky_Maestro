@@ -26,7 +26,7 @@ export const fetchExchangeRate = async (
 };
 
 const COUNTRY_URL = process.env.REACT_APP_COUNTRY_URL;
-const COUNTRY_SETVICE_KEY = process.env.REACT_APP_COUNTRY_SERVICE_KEY;
+const COUNTRY_SETVICE_KEY = process.env.REACT_APP_AIRPORT_SERVICE_KEY;
 
 export const fetchCountryImage = async (country: string): Promise<string> => {
   try {
