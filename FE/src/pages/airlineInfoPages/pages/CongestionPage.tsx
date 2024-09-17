@@ -5,6 +5,7 @@ import styles from "../../../styles/airlineInfo/ConjestionPage.module.css";
 import { fetchCongestionData } from "../getInfoData/getCongestionData";
 import { Link } from "react-router-dom";
 import { LuSettings2 } from "react-icons/lu";
+import ConjestionOptionController from "../airlineComponents/ConjestionOptionController";
 
 interface Congestion {
   adate: string;
@@ -132,68 +133,15 @@ const CongestionPage: React.FC = () => {
           rightContent={<LuSettings2 onClick={handleToggle} />}
         />
         {isToggled && (
-          <div className={styles["option-controller"]}>
-            <div className={styles["option-list"]}>
-              <button
-                className={`${styles["option-btn"]} ${
-                  terminal === "T1" ? styles["btn-active"] : ""
-                }`}
-                onClick={() => setTerminal("T1")}
-              >
-                터미널 1
-              </button>
-              <button
-                className={`${styles["option-btn"]} ${
-                  terminal === "T2" ? styles["btn-active"] : ""
-                }`}
-                onClick={() => setTerminal("T2")}
-              >
-                터미널 2
-              </button>
-            </div>
-            <div className={styles["option-list"]}>
-              <button
-                className={`${styles["option-btn"]} ${
-                  into === "out" ? styles["btn-active"] : ""
-                }`}
-                onClick={() => setInto("out")}
-              >
-                출국장
-              </button>
-              <button
-                className={`${styles["option-btn"]} ${
-                  into === "in" ? styles["btn-active"] : ""
-                }`}
-                onClick={() => setInto("in")}
-              >
-                입국장
-              </button>
-            </div>
-            <div className={styles["option-list"]}>
-              <button
-                className={`${styles["option-btn"]} ${
-                  day === "오늘" ? styles["btn-active"] : ""
-                }`}
-                onClick={() => setDay("오늘")}
-              >
-                오늘
-              </button>
-              <button
-                className={`${styles["option-btn"]} ${
-                  day === "내일" ? styles["btn-active"] : ""
-                }`}
-                onClick={() => setDay("내일")}
-              >
-                내일
-              </button>
-            </div>
-            <button
-              className={styles["select-btn"]}
-              onClick={() => setIsToggled(false)}
-            >
-              확인
-            </button>
-          </div>
+          <ConjestionOptionController
+            terminal={terminal}
+            setTerminal={setTerminal}
+            into={into}
+            setInto={setInto}
+            day={day}
+            setDay={setDay}
+            setIsToggled={setIsToggled}
+          />
         )}
 
         <div className={styles["list-container"]}>

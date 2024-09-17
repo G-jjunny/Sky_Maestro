@@ -72,9 +72,10 @@ td {
 .option-controller {
   width: 100%;
   max-width: 500px;
-  border-radius: 0 0 10% 10%;
+  border-radius: 0 0 10px 10px;
   padding: 20px;
   background-color: #fafafa;
+  border: solid 1px var(--color-light);
   position: absolute;
   display: flex;
   flex-direction: column;
