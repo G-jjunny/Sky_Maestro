@@ -57,98 +57,97 @@ const Login: React.FC = () => {
     }
   };
 
-
   return (
-      <div>
-        <Header centerContent="로그인" />
-        <div className={styles["login-container"]}>
-          {error && <p className={styles.error}>{error}</p>}
-          <form className={styles["login-form"]} onSubmit={handleLogin}>
-            <div className={styles["email-container"]}>
-              <input
-                  className={styles["email-input"]}
-                  id="email-input"
-                  type="email"
-                  name="email"
-                  placeholder="이메일 입력"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  autoComplete="username"
-                  onKeyPress={(e) => {
-                    if (e.key === "Enter") {
-                      e.preventDefault();
-                      handleEmailSubmit();
-                    }
-                  }}
-              />
-              {!showPasswordField && (
-                  <button
-                      type="button"
-                      className={styles["email-submit"]}
-                      onClick={handleEmailSubmit}
-                  >
-                    &gt;
-                  </button>
-              )}
-            </div>
-            {showPasswordField && (
-                <input
-                    className={styles["password-input"]}
-                    id="password-input"
-                    type="password"
-                    name="password"
-                    placeholder="비밀번호 입력"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    autoComplete="current-password"
-                />
-            )}
-            <div className={styles["button-container"]}>
-              {showPasswordField && (
-                  <button className={styles.button} type="submit">
-                    로그인
-                  </button>
-              )}
-            </div>
-            <div className={styles["link-container"]}>
-              <p className={styles["link-text"]}>아직 회원이 아니신가요?</p>
+    <div className={styles["container"]}>
+      <Header centerContent="로그인" />
+      <div className={styles["login-container"]}>
+        {error && <p className={styles.error}>{error}</p>}
+        <form className={styles["login-form"]} onSubmit={handleLogin}>
+          <div className={styles["email-container"]}>
+            <input
+              className={styles["email-input"]}
+              id="email-input"
+              type="email"
+              name="email"
+              placeholder="이메일 입력"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              autoComplete="username"
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  handleEmailSubmit();
+                }
+              }}
+            />
+            {!showPasswordField && (
               <button
+                type="button"
+                className={styles["email-submit"]}
+                onClick={handleEmailSubmit}
+              >
+                &gt;
+              </button>
+            )}
+          </div>
+          {showPasswordField && (
+            <input
+              className={styles["password-input"]}
+              id="password-input"
+              type="password"
+              name="password"
+              placeholder="비밀번호 입력"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              autoComplete="current-password"
+            />
+          )}
+          <div className={styles["button-container"]}>
+            {showPasswordField && (
+              <button className={styles.button} type="submit">
+                로그인
+              </button>
+            )}
+          </div>
+          <div className={styles["link-container"]}>
+            <p className={styles["link-text"]}>아직 회원이 아니신가요?</p>
+            <button
+              className={`${styles["link-button"]} ${styles["bold-text"]}`}
+              type="button"
+              onClick={() => navigate("../createAccount")}
+            >
+              회원가입
+            </button>
+          </div>
+          <div className={styles["link-container"]}>
+            {loginAttempts >= 3 && (
+              <>
+                <p className={styles["link-text"]}>계정을 잃어 버리셨나요?</p>
+                <button
                   className={`${styles["link-button"]} ${styles["bold-text"]}`}
                   type="button"
-                  onClick={() => navigate("../createAccount")}
-              >
-                회원가입
-              </button>
-            </div>
-            <div className={styles["link-container"]}>
-              {loginAttempts >= 3 && (
-                  <>
-                    <p className={styles["link-text"]}>계정을 잃어 버리셨나요?</p>
-                    <button
-                        className={`${styles["link-button"]} ${styles["bold-text"]}`}
-                        type="button"
-                        onClick={() => navigate("../findId")}
-                    >
-                      계정 찾기
-                    </button>
-                    <span className={styles["separator"]}> | </span>
-                    <button
-                        className={styles["link-button"]}
-                        type="button"
-                        onClick={() => navigate("../findPassword")}
-                    >
-                      비밀번호 찾기
-                    </button>
-                  </>
-              )}
-            </div>
-          </form>
-        </div>
-        {isLoading && <LoadingSpinner message="로그인 중입니다..." />}
-        {isSpinnerActive && <LoadingSpinner message="테스트 중입니다..." />}
+                  onClick={() => navigate("../findId")}
+                >
+                  계정 찾기
+                </button>
+                <span className={styles["separator"]}> | </span>
+                <button
+                  className={styles["link-button"]}
+                  type="button"
+                  onClick={() => navigate("../findPassword")}
+                >
+                  비밀번호 찾기
+                </button>
+              </>
+            )}
+          </div>
+        </form>
       </div>
+      {isLoading && <LoadingSpinner message="로그인 중입니다..." />}
+      {isSpinnerActive && <LoadingSpinner message="테스트 중입니다..." />}
+    </div>
   );
 };
 

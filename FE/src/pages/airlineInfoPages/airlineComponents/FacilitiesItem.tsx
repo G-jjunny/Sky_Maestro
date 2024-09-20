@@ -10,6 +10,8 @@ interface FacilitiesItemProps {
   serviceTime: string;
   tel: string;
 }
+
+/** 현재시간 기준으로 영업중인지 아닌지를 반환 */
 const isOpenNow = (serviceTime: string): boolean => {
   const [start, end] = serviceTime.split(" ~ ");
   const currentTime = new Date();
@@ -40,7 +42,7 @@ const FacilitiesItem: React.FC<FacilitiesItemProps> = ({
 }) => {
   const openNow = isOpenNow(serviceTime);
   return (
-    <div className={styles["facility-list-box"]}>
+    <div className={`${styles["facility-list-box"]}`}>
       <div className={styles["facility-name"]}>{name}</div>
       <div className={styles.facility}>
         <div className={styles["facility-location"]}>{location}</div>

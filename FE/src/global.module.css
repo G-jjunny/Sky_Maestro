@@ -10,6 +10,7 @@
   --color-cancelled: #ff2020;
 
   /* element size */
+  --font-xxs: 14px;
   --font-xs: 16px;
   --font-sm: 20px;
   --font-md: 24px;

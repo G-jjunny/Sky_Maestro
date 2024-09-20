@@ -1,17 +1,20 @@
 .wrapper {
   width: 100%;
   max-width: var(--media-tab);
-  background-color: var(--color-dark);
+  background-color: var(--color-light);
   height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
-  padding-bottom: 60px;
+  padding: 60px 0;
 }
 
 .icon {
   color: var(--color-base);
   font-size: var(--font-md);
   margin-right: 10px;
+  width: 44px;
+  height: 44px;
 }
