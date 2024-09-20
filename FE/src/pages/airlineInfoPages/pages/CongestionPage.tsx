@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaChevronLeft, FaFilter } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
 import Header from "../../../components/Header";
 import styles from "../../../styles/airlineInfo/ConjestionPage.module.css";
 import { fetchCongestionData } from "../getInfoData/getCongestionData";
