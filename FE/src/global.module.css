@@ -2,7 +2,8 @@
 :root {
   /* color */
   --color-bg: #f2f3f4;
-  --color-dark: rgb(1, 23, 89);
+  /* --color-dark: rgb(1, 23, 89); */
+  --color-dark: #333649;
   --color-base: #3399ff;
   --color-light: #d8e8e8;
   --color-warning: #fa8c8c;

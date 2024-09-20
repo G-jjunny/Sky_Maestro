@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 60px 0;
   position: relative;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
 .conjestion-header {
   font-size: 16px;
@@ -40,6 +40,8 @@ table {
   background-color: #ddd;
   height: 25px;
   font-weight: 700;
+  position: sticky;
+  top: 0;
 }
 tbody {
   color: #027ffe;
@@ -55,6 +57,8 @@ tbody {
 .list-item:last-child {
   color: red;
   background-color: #dfdfdf;
+  position: sticky;
+  bottom: 0;
 }
 .list-item:last-child .dataTimeSet {
   display: none;

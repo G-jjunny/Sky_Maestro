@@ -2,14 +2,7 @@ import Header from "../../components/Header";
 import MainPageContainer from "./mainPageComponents/MainPageContainer";
 import MainPageLinkItem from "./mainPageComponents/MainPageLinkItem";
 import styles from "../../styles/mainPage/MainPage.module.css";
-import {
-  FaSearch,
-  FaList,
-  FaMapMarkedAlt,
-  FaDoorOpen,
-  FaConciergeBell,
-  FaParking,
-} from "react-icons/fa"; // icon 라이브러리
+
 import Airline from "../../assets/Icon/airline_icon.png";
 import AirlineAll from "../../assets/Icon/travel_icon.png";
 import Map from "../../assets/Icon/map_icon.png";
