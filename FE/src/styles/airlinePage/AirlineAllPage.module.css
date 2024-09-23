@@ -1,10 +1,11 @@
 .wrapper {
   width: 100%;
   max-width: var(--media-tab);
+  height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
-  padding-bottom: 60px;
+  padding: 60px 0;
 }
 
 .header-container--left {
